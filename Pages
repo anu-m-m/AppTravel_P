@@ -1,0 +1,34 @@
+Pages,
+    Customer Data - Creation / Edit
+        > customerType : Package Based Customer - 'packBased' ( customerType = 'packBased' ).
+        > customerType : Non Package Based Customer - 'nonPackBased' ( customerType = 'nonPackBased' ).
+        > customerName : customerName
+        > Address :
+        > Location :
+        > Phone :
+        > Email :
+        > Package :
+        > Discount :
+        > Trip Start Date :
+        > Trip End Date :
+        > Trip Status :
+
+    
+    Package Creation Pages / Edit
+        > Destination :
+        > Sublocations :
+        > Travel Options :
+        > Food Options :
+        > Price :
+
+
+Customer Module
+    Customer creation component.
+    Customer list component.
+
+// 1. Validation for all fields
+// 2. Min and Max Characters for all fields.
+// 3. Regex validation for input fields.
+// 4. Duplicate check on package name.
+// 5.Autogeneration of package Id.
+   6.Expand Customer (Type)

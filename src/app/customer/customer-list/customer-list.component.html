@@ -1,0 +1,19 @@
+<div class="table-container">
+    <table class="w-100">
+        <th>Customer Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Selected Package</th>
+        <th>Address</th>
+        <tbody>
+            <tr *ngFor="let cust of custDetails">
+                <td>{{cust.customerName }}</td>
+                <td>{{ cust.phoneNumber}}</td>
+                <td>{{ cust.email}}</td>
+                <td>{{ cust.packageName}}</td>
+                <td>{{ cust.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>

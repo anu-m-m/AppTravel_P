@@ -1,0 +1,12 @@
+
+<div>
+    <div class="btn-div">
+        <input type="text" placeholder="Search" (input)="onSearchPackage($event)" [(ngModel)]="searchPattern" #searchBox>
+        
+        <button *ngIf="isAdmin" class="btn-cls" tooltip="click to create package" (click) = "onCreatePackage()">Create Package</button>    
+    </div>
+   
+    <div>
+        <app-list-package [packg]="filteredPackages" [test]="test"></app-list-package>
+    </div>
+</div>

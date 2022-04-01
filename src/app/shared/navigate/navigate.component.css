@@ -1,0 +1,22 @@
+.navcls{
+    display: block;
+    color: rgb(10, 3, 46); 
+    background-color: rgb(140, 140, 250);
+    padding: 10px;
+}
+.navelm{
+    padding: 6px;
+    display: inline;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+li:hover{
+    color: rgb(143, 89, 18);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.navelm:hover{
+    background-color: rgb(175, 206, 247);
+}

@@ -1,0 +1,10 @@
+
+<div>
+    <div class="btn-div">
+        <input type="text" placeholder="Search">
+        <button class="btn-cls" tooltip="Click to add customer" (click)="onCreateCustomer()">Add Customer</button>
+    </div>
+    <div>
+        <app-customer-list [customer] ="customerDetails"></app-customer-list>
+    </div>  
+</div>

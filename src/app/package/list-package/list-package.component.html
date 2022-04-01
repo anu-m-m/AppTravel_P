@@ -1,0 +1,28 @@
+<div class="table-container">
+    <table class="w-100">
+        <th>Package Id</th>
+        <th>Package Name</th>
+        <th>Destination</th>
+        <th>Sublocations</th>
+        <th>Tripdays</th>
+        <th>Traveloptions</th>
+        <th>Foodoptions</th>
+        <th>Price</th>
+        <tbody>
+            <tr *ngFor="let pkg of filteredPackages">
+                <td>{{ pkg.pkgId}}</td>
+                <td>{{ pkg.pkdName }}</td>
+                <td>{{ pkg.destination}}</td>
+                <td>{{ pkg.subLocations}}</td>
+                <td>{{ pkg.tripDays }}</td>
+                <td>{{ pkg.travelOptions}}</td>
+                <td>{{ pkg.foodOptions}}</td>
+                <td>{{ pkg.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<!-- <div>
+    <h2>{{ testNew }}</h2>
+</div> -->

@@ -1,0 +1,60 @@
+<div class="container">
+    <h2>{{ isEditMode ? 'Edit': 'Add' }} Package</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="field-container">
+                <div>Package Name</div>
+                <input type="text" [(ngModel)]="packageName">
+            </div>
+            <div class="field-container">
+                <div>Sub Locations</div>
+                <input type="text" [(ngModel)]="sublocation" (keyup.enter)="addSublocation()" class="mb-1">
+                <div class="mt-1" *ngIf="sublocationError" style="color: red;">
+                    {{ sublocationError }}
+                </div>
+                <div class="mt-1">
+                    <span *ngFor="let subloc of sublocations" class="sublocation">{{subloc}}<span class="close"
+                            (click)="onRemoveSublocation(subloc)">x</span>
+                    </span>
+                </div>
+            </div>
+            <div class="field-container">
+                <div>Travel Options</div>
+                <input type="checkbox" (change)="updateTravelOption('Car')" [checked]="travelOptions.includes('Car')">
+                <span class="checkbox-label">Car</span>
+                <input type="checkbox" (change)="updateTravelOption('Bus')" [checked]="travelOptions.includes('Bus')">
+                <span class="checkbox-label">Bus</span>
+                <input type="checkbox" (change)="updateTravelOption('Flight')" [checked]="travelOptions.includes('Flight')">
+                <span class="checkbox-label">Flight</span>
+            </div>
+            <div class="field-container">
+                <div>Price</div>
+                <input type="text" [(ngModel)]="price">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="field-container">
+                <div>Destination</div>
+                <input type="text" [(ngModel)]="location">
+            </div>
+            <div class="field-container">
+                <div>Tripdays</div>
+                <input type="text" [(ngModel)]="tripdays">
+            </div>
+            <div class="field-container">
+                <div>Food Options</div>
+                <input type="checkbox" (change)="updateFoodOptions('BreakFast')" [checked]="foodOptions.includes('BreakFast')">
+                <span class="checkbox-label">Breakfast</span>
+
+                <input type="checkbox" (change)="updateFoodOptions('Lunch')" [checked]="foodOptions.includes('Lunch')">
+                <span class="checkbox-label">Lunch</span>
+
+                <input type="checkbox" (change)="updateFoodOptions('Dinner')" [checked]="foodOptions.includes('Dinner')">
+                <span class="checkbox-label">Dinner</span>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <button type="button" (click)="validateAndAddPackage()">Add Package</button>
+    </div>
+</div>
