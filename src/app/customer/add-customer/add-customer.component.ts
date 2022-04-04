@@ -26,10 +26,29 @@ export class AddCustomerComponent implements OnInit {
   packageIds = [];
   packageIdmap = {};
   warning =false;
-  selectedPackageTravelOptions=[];
-  countries = ['India','China','Japan','Russia'];
-  India = ['Kerala','Karnadaka','Tamilnadu'];
-  Kerala = ['Ernklm','tvm','clt'];
+  selectedPackageTravelOptions=[];  
+  countries = ['India', 'China', 'Japan', 'Indonesia'];
+
+  india = ['Kerala', 'Karnataka', 'Tamilnadu'];
+  kerala = ['Ernakulam', 'trivandrum', 'Calicut'];
+  karnataka = ['Bagalkot', 'Ballari', 'Belagavi'];
+  tamilnadu = ['Ariyalur', 'Chengalpattu', 'Chennai'];
+
+  china = ['Beijing', 'Shanghai', 'Shanxi'];
+  beijing = ['Dongcheng', 'Xicheng', 'Shijingshan'];
+  shanghai = ['Huangpu', 'Xuhui', 'Changning'];
+  shanxi = ['Xinghualing', 'Pingcheng', 'Cheng'];
+
+  japan = ['Tohoku', 'Tottori', 'Saitama'];
+  tohoku = ['Sendai', 'Iwaki', 'Koriyama'];
+  tottori = ['Hino', 'Iwami', 'Yazu'];
+  saitama = ['Chichibu', 'Iruma ', 'Hiki'];
+
+  Indonesia = ['Bali', 'Papua', 'Lampung'];
+  bali = ['Seminyak', 'Nusa Dua', 'nSanur'];
+  papua = ['Daulo', 'Goroka', 'Henganofi'];
+  lampung = ['South Lampung', 'Tulang Bawang', 'Way Kanan'];
+
   constructor( private custService:CustomerService,
     private custroute:Router,
     private pckService: PackageService) { }
