@@ -7,16 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   packages1 = {
-    name: 'Anju',
-    age:23
+    name: 'Anu',
+    age:123
   };
   title = 'travelManage';
 
   constructor(){
     // Object assign
-    this.packages1 = Object.assign(this.packages1, {lastname: 'Thampi'})
+    this.packages1 = Object.assign(this.packages1, {lastname: 'mm'})
     console.log('Packages1',this.packages1);
-    const NewPack = Object.assign({}, this.packages1, {location: 'PTA'});
+    const NewPack = Object.assign({}, this.packages1, {location: 'clt'});
     console.log('NewPack:',NewPack)
   }
 }

@@ -19,7 +19,7 @@ export class PackageService {
       destination: 'Trivandrum',
       subLocations: ['Kovalam', 'Varkala', 'Kanyakumari'],
       tripDays: 3,
-      travelOptions: ['Train', 'Car'],
+      travelOptions: ['Bus','Train', 'Car'],
       foodOptions: ['Breakfast', 'Lunch', 'Dinner'],
       price: 20000
     },
@@ -41,7 +41,7 @@ export class PackageService {
       destination: 'Wayanad',
       subLocations: ['Edakkal', 'Banasagar', 'Vythiri'],
       tripDays: 2,
-      travelOptions: ['Bus', 'Train', 'Car'],
+      travelOptions: ['Bus', 'Car'],
       foodOptions: ['Breakfast', 'Lunch', 'Dinner'],
       price: 3000
     },

@@ -87,3 +87,9 @@ input[type=email] {
     border: 1px solid gray;
     border-radius: 3px;
 }
+
+.row-container{
+    border-radius: 6px;
+    border: solid 1px gray;
+    padding: 20px;
+}

@@ -27,6 +27,9 @@ export class AddCustomerComponent implements OnInit {
   packageIdmap = {};
   warning =false;
   selectedPackageTravelOptions=[];
+  countries = ['India','China','Japan','Russia'];
+  India = ['Kerala','Karnadaka','Tamilnadu'];
+  Kerala = ['Ernklm','tvm','clt'];
   constructor( private custService:CustomerService,
     private custroute:Router,
     private pckService: PackageService) { }

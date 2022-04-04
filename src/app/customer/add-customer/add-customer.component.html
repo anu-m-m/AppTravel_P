@@ -1,35 +1,63 @@
 <div class="container">
-    <div class="row">
+    <div><h5>Customer Details</h5></div>
+    <div class="row row-container">
         <div class="col-md-4">
-            <div class="field-container">
-                <div>Customer Name</div>
-                <input type="text" [(ngModel)]="customerName">
-            </div> 
-            <div class="field-container">
-                <div>Phone Number</div>
-                <input type="tel" [(ngModel)]="custPhoneNumber">
-            </div> 
-            <div class="field-container">
-                <div>Email Id</div>
-                <input type="email" [(ngModel)]="email">
-            </div> 
-            <div class="field-container">
-                <div>Address</div>
-                <textarea name="" id="" cols="25" rows="3" [(ngModel)]="custAddress"></textarea>
-                <!-- <input type="text" [(ngModel)]="custAddress"> -->
-            </div> 
+            <div>Customer Name</div>
+            <input type="text" [(ngModel)]="customerName">
         </div>
-
-    
-    
         <div class="col-md-4">
-            <div class="field-container">
-                <div>Select Package</div>
-                <select [(ngModel)]="selectedPKG" (change)="changePackage()">
-                    <option [value]="item.key" *ngFor="let item of packageIdmap | keyvalue">{{ item.value}}</option>
-                </select>
-            </div> 
-            <!-- <div class="field-container">
+            <div>Phone Number</div>
+            <input type="tel" [(ngModel)]="custPhoneNumber">
+        </div>
+        <div class="col-md-4">
+            <div>Email Id</div>
+            <input type="email" [(ngModel)]="email">
+        </div>
+        <div class="col-md-4">
+            <div>Address</div>
+            <!-- <textarea name="" id="" cols="25" rows="3" [(ngModel)]="custAddress"></textarea> -->
+            <input type="text" [(ngModel)]="custAddress">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div><h5>Customer Address</h5></div>
+    <div class="row row-container">
+        <div class="col-md-4">
+            <div>House Name</div>
+            <input type="text" [(ngModel)]="customerName">
+        </div>
+        <div class="col-md-4">
+            <div>District</div>
+            <input type="text" [(ngModel)]="customerName">
+        </div>
+        <div class="col-md-4">
+            <div>Country</div>
+            <input type="text" [(ngModel)]="customerName">
+        </div>
+        <div class="col-md-4">
+            <div>Locality</div>
+            <input type="text" [(ngModel)]="customerName">
+        </div>
+        <div class="col-md-4">
+            <div>State</div>
+            <input type="text" [(ngModel)]="customerName">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div><h5>Package Details</h5></div>
+    <div class="row row-container">
+
+        <div class="col-md-4">
+            <div>Select Package</div>
+            <select [(ngModel)]="selectedPKG" (change)="changePackage()">
+                <option [value]="item.key" *ngFor="let item of packageIdmap | keyvalue">{{ item.value}}</option>
+            </select>
+        </div>
+        <!-- <div class="field-container">
                 <div>Test</div>
                 <select [(ngModel)]="selectedPKG">
                     <option [value]="'PKG_TVM'">Trivandrum</option>
@@ -37,50 +65,46 @@
                     <option [value]="'PKG_W'">Wayanad</option>
                 </select>
             </div>  -->
-            <div class="field-container">
-                <div>Boarding Location</div>
-                <input type="text" [(ngModel)]="boardingLoc">
-            </div>
-            <div class="field-container">
-                <div>Tripdays</div>
-                <input type="text" [(ngModel)]="tripDays">
-            </div> 
-            <div class="field-container">
-                <div>Trip Start Date</div>
-                <input type="date"  [min]="tripStartMinDate" [max]="tripEnd"  [(ngModel)]="tripStart">
-                <!-- [max]="tripStartMaxDate"  -->
-                <!-- (change)="onChangeStartDate()" -->
-                
-            </div> 
+        <div class="col-md-4">
+            <div>Boarding Location</div>
+            <input type="text" [(ngModel)]="boardingLoc">
         </div>
         <div class="col-md-4">
-            <div class="field-container">
-                <div>Trip End Date</div>
-                <input type="date" [min]="tripStart" [(ngModel)]="tripEnd">
-                <!-- [min]="tripStartMinDate" -->
-                <!-- (change)="onChangeEndDate()" -->
-                
-            </div> 
-            
-            <div class="field-container">
-                <div>Food Options</div>
-                <input type="text" [(ngModel)]="foodOpt">
-            </div> 
-            <div class="field-container">
-                <div>Travel Mode</div>
-        
-                <select [(ngModel)]="travelMode">
-                    <option [value]="fdOp" *ngFor="let fdOp of selectedPackageTravelOptions">{{fdOp}}</option>
-                </select>
-            </div> 
-            <div class="field-container">
-                <div>Price</div>
-                <input type="text" [(ngModel)]="custPrice">
-            </div> 
-            
-        </div> 
+            <div>Tripdays</div>
+            <input type="text" [(ngModel)]="tripDays">
+        </div>
+        <div class="col-md-4">
+            <div>Travel Mode</div>
+            <select [(ngModel)]="travelMode">
+                <option [value]="fdOp" *ngFor="let fdOp of selectedPackageTravelOptions">{{fdOp}}</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <div>Trip Start Date</div>
+            <input type="date" [min]="tripStartMinDate" [max]="tripEnd" [(ngModel)]="tripStart">
+            <!-- [max]="tripStartMaxDate"  -->
+            <!-- (change)="onChangeStartDate()" -->
+
+        </div>
+        <div class="col-md-4">
+            <div>Trip End Date</div>
+            <input type="date" [min]="tripStart" [(ngModel)]="tripEnd">
+            <!-- [min]="tripStartMinDate" -->
+            <!-- (change)="onChangeEndDate()" -->
+        </div>
+        <div class="col-md-4">
+            <div>Food Options</div>
+            <input type="text" [(ngModel)]="foodOpt">
+        </div>
+        <div class="col-md-4">
+            <div>Price</div>
+            <input type="text" [(ngModel)]="custPrice">
+        </div>
+
     </div>
-    <div class="row btn-container">
-        <button type="button" (click)="addCust()">Submit</button>
-    </div>
+</div>
+
+
+<div class="row btn-container">
+    <button type="button" (click)="addCust()">Submit</button>
 </div>
