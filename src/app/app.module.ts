@@ -19,7 +19,7 @@ import { CustomerModule } from './customer/customer.module';
     SharedModule,
     PackageModule,
     TooltipModule,
-    CustomerModule
+    CustomerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

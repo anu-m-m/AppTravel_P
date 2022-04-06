@@ -15,6 +15,7 @@ export class AddCustomerComponent implements OnInit {
   tripDays;
   tripStart = new Date().toISOString().slice(0, 10) ;
   tripEnd;
+  tripMax;
   custPrice;
   custAddress;
   boardingLoc;
@@ -26,28 +27,58 @@ export class AddCustomerComponent implements OnInit {
   packageIds = [];
   packageIdmap = {};
   warning =false;
-  selectedPackageTravelOptions=[];  
-  countries = ['India', 'China', 'Japan', 'Indonesia'];
-
-  india = ['Kerala', 'Karnataka', 'Tamilnadu'];
-  kerala = ['Ernakulam', 'trivandrum', 'Calicut'];
-  karnataka = ['Bagalkot', 'Ballari', 'Belagavi'];
-  tamilnadu = ['Ariyalur', 'Chengalpattu', 'Chennai'];
-
-  china = ['Beijing', 'Shanghai', 'Shanxi'];
-  beijing = ['Dongcheng', 'Xicheng', 'Shijingshan'];
-  shanghai = ['Huangpu', 'Xuhui', 'Changning'];
-  shanxi = ['Xinghualing', 'Pingcheng', 'Cheng'];
-
-  japan = ['Tohoku', 'Tottori', 'Saitama'];
-  tohoku = ['Sendai', 'Iwaki', 'Koriyama'];
-  tottori = ['Hino', 'Iwami', 'Yazu'];
-  saitama = ['Chichibu', 'Iruma ', 'Hiki'];
-
-  Indonesia = ['Bali', 'Papua', 'Lampung'];
-  bali = ['Seminyak', 'Nusa Dua', 'nSanur'];
-  papua = ['Daulo', 'Goroka', 'Henganofi'];
-  lampung = ['South Lampung', 'Tulang Bawang', 'Way Kanan'];
+  selectedPackageTravelOptions=[]; 
+  fName;
+  lName;
+  hName;
+  country;
+  state;
+  district;
+  locality;
+  countries = ['Armenia','Azerbaijan','Bahrain','Bangladesh','Bhutan','Brunei', 'Cambodia','China','Cyprus','Georgia','India','Indonesia','Iran','Iraq','Israel', 'Japan','Jordan','Kazakhstan','Kuwait','Kyrgyzstan','Laos','Lebanon','Malaysia','Maldives','Mongolia','Myanmar','Nepal','North Korea','Oman','Pakistan','Palestine','Philippines','Qatar','Russia','Saudi Arabia','Singapore','South Korea','Sri Lanka','Syria','Taiwan','Tajikistan','Thailand','Timor Leste','Turkey','Turkmenistan','United Arab Emirates','Uzbekistan','Vietnam','Yemen']
+  states = {
+    India: ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jammu and Kashmir', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttarakhand', 'Uttar Pradesh', 'West Bengal', 'Andaman and Nicobar Islands', 'Chandigarh',  'Delhi', 'Lakshadweep', 'Puducherry'],
+    China: ['Beijing', 'Shanghai', 'Shanxi'],
+    Japan: ['Tohoku', 'Tottori', 'Saitama'],
+    Indonesia: ['Bali', 'Papua', 'Lampung']
+  }
+  districts = {
+    Kerala: [
+      'Kannur',
+      'Kasaragod',
+      'Kollam',
+      'Kottayam',
+      'Kozhikode',
+      'Malappuram',
+      'Palakkad',
+      'Pathanamthitta',
+      'Ernakulam',
+      'Wayanad'
+    ],
+    karnataka: [
+      'Bagalkot',
+      'Ballari',
+      'Belagavi',
+      'Bengaluru',
+      'Bengaluru',
+      'Bidar',
+      'Chamarajanagar',
+      'Chikballapur'
+    ],
+    tamilnadu: [
+      'Ariyalur',
+      'Chengalpattu',
+      'Chennai',
+      'Coimbatore',
+      'Cuddalore',
+      'Dharmapuri',
+      'Dindigul',
+      'Erode'
+    ]
+  };
+  localities = {
+    Ernakulam: ['Fortkochi', 'Mattancherry', 'Vypin', 'Highcourt', 'Kaloor', 'Palarivattom', 'Edappalli', 'Vytilla']
+  }
 
   constructor( private custService:CustomerService,
     private custroute:Router,
