@@ -6,7 +6,7 @@
         <div class="col-md-4">
             <div class="field-container">
                 <div>Customer First Name</div>
-                <input type="text" [(ngModel)]="fName">
+                <input type="text" [(ngModel)]="customerFName">
             </div>
             <div class="field-container">
                 <div>Phone Number</div>
@@ -17,7 +17,7 @@
         <div class="col-md-4">
             <div class="field-container">
                 <div>Customer last Name</div>
-                <input type="text" [(ngModel)]="lName">
+                <input type="text" [(ngModel)]="customerLName">
             </div>
             <div class="field-container">
                 <div>Email Id</div>
@@ -38,7 +38,7 @@
         <div class="col-md-4">
             <div class="field-container">
                 <div>House Name/No.</div>
-                <input type="text" [(ngModel)]="hName">
+                <input type="text" [(ngModel)]="houseName">
             </div>
             <div class="field-container">
                 <div>District</div>
@@ -51,7 +51,7 @@
             <div class="field-container">
                 <div>Country</div>
                 <input type="text" [(ngModel)]="country" [typeahead]="countries"
-                    [typeaheadAsync]="false" autocomplete="off">
+                    [typeaheadAsync]="false">
             </div>
             <div class="field-container">
                 <div>Locality</div>
@@ -83,19 +83,18 @@
             </div>
             <div class="field-container">
                 <div>Travel Mode</div>
+
                 <select [(ngModel)]="travelMode">
                     <option [value]="fdOp" *ngFor="let fdOp of selectedPackageTravelOptions">{{fdOp}}</option>
                 </select>
             </div>
-            <div class="field-container">
-                <div>Tripdays</div>
-                <input type="number" [min]="1" [max]="tripMax" [placeholder]="tripMax" [(ngModel)]="tripDays">
-
-                <!-- <input type="checkbox" [value]="3" (click)="getRadioButton()" #input3><span -->
-                    <!-- class="checkbox-label">3</span> -->
-                <!-- <input type="radio"><span class="checkbox-label" #input>5</span>
-                <input type="radio"><span class="checkbox-label" #input>7</span> -->
-            </div>
+            <div class="field-container" *ngIf="packageFoodOptions.length">
+                <div>Food Options</div>
+                <ng-container *ngFor="let fdOpt of packageFoodOptions">
+                    <input type="checkbox" (change)="updateFoodOption(fdOpt)" [checked]="selectedFoodOptions.includes(fdOpt)">
+                    <span class="checkbox-label">{{fdOpt}}</span>
+                </ng-container>
+            </div> 
 
         </div>
         <div class="col-md-4">
@@ -104,12 +103,18 @@
                 <input type="date" [min]="tripStartMinDate" [max]="tripEnd" [(ngModel)]="tripStart">
                 <!-- [max]="tripStartMaxDate"  -->
                 <!-- (change)="onChangeStartDate()" -->
-
             </div>
             <div class="field-container">
-                <div>Food Options</div>
-                <input type="text" [(ngModel)]="foodOpt">
-            </div>        
+                <div>Tripdays</div>
+                <input type="number" [min]="1" [max]="tripMax" [placeholder]="tripMax" [(ngModel)]="tripDays">
+            </div>
+            <div class="field-container" *ngIf="packageFoodOptions.length">
+                <div>Sub Locations</div>
+                <ng-container *ngFor="let subLoc of packageSubLocations">
+                    <input type="checkbox" (change)="updateSubLocations(subLoc)" [checked]="selectedSubLocations.includes(subLoc)">
+                    <span class="checkbox-label">{{subLoc}}</span>
+                </ng-container>
+            </div> 
         </div>
         <div class="col-md-4">
             <div class="field-container">

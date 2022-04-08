@@ -20,12 +20,17 @@
             </div>
             <div class="field-container">
                 <div>Travel Options</div>
-                <input type="checkbox" (change)="updateTravelOption('Car')" [checked]="travelOptions.includes('Car')">
+                <ng-container *ngFor="let traOpt of availabletraOpt">
+                    <input type="checkbox" (change)="updateTravelOption(traOpt)"
+                        [checked]="travelOptions.includes(traOpt)">
+                    <span class="checkbox-label">{{traOpt}}</span>
+                </ng-container>
+                <!-- <input type="checkbox" (change)="updateTravelOption('Car')" [checked]="travelOptions.includes('Car')">
                 <span class="checkbox-label">Car</span>
                 <input type="checkbox" (change)="updateTravelOption('Bus')" [checked]="travelOptions.includes('Bus')">
                 <span class="checkbox-label">Bus</span>
                 <input type="checkbox" (change)="updateTravelOption('Flight')" [checked]="travelOptions.includes('Flight')">
-                <span class="checkbox-label">Flight</span>
+                <span class="checkbox-label">Flight</span> -->
             </div>
             <div class="field-container">
                 <div>Price</div>
@@ -41,17 +46,17 @@
                 <div>Tripdays</div>
                 <input type="text" [(ngModel)]="tripdays">
             </div>
-            <div class="field-container">
-                <div>Food Options</div>
-                <input type="checkbox" (change)="updateFoodOptions('BreakFast')" [checked]="foodOptions.includes('BreakFast')">
-                <span class="checkbox-label">Breakfast</span>
-
-                <input type="checkbox" (change)="updateFoodOptions('Lunch')" [checked]="foodOptions.includes('Lunch')">
-                <span class="checkbox-label">Lunch</span>
-
-                <input type="checkbox" (change)="updateFoodOptions('Dinner')" [checked]="foodOptions.includes('Dinner')">
-                <span class="checkbox-label">Dinner</span>
-            </div>
+            <ng-container *ngFor="let foodOpt of availablefoodOpt">
+                <input type="checkbox" (change)="updateFoodOptions(foodOpt)"
+                    [checked]="foodOptions.includes(foodOpt)">
+                <span class="checkbox-label">{{foodOpt}}</span>
+            </ng-container>
+            <!-- <input type="checkbox" (change)="updateFoodOptions('BreakFast')" [checked]="foodOptions.includes('BreakFast')">
+            <span class="checkbox-label">Breakfast</span>
+            <input type="checkbox" (change)="updateFoodOptions('Lunch')" [checked]="foodOptions.includes('Lunch')">
+            <span class="checkbox-label">Lunch</span>
+            <input type="checkbox" (change)="updateFoodOptions('Dinner')" [checked]="foodOptions.includes('Dinner')">
+            <span class="checkbox-label">Dinner</span> -->
         </div>
     </div>
     <div class="row mt-1">

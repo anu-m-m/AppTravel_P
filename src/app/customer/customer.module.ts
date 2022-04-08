@@ -7,6 +7,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { FormsModule } from '@angular/forms';
 import { PackageModule } from '../package/package.module';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
     TooltipModule,
     FormsModule,
     PackageModule,
-    TypeaheadModule
+    TypeaheadModule,
+    BrowserAnimationsModule,
   ]
 })
 export class CustomerModule { }

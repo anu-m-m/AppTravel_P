@@ -21,6 +21,9 @@ export class AddPackageComponent implements OnInit {
   subloc;
   currentPackageId='';
 
+  availabletraOpt = ['Car','Bus','Flight','Train'];
+  availablefoodOpt = ['Breakfast','Lunch','Dinner'];
+
   constructor( private service:PackageService, private rtr: Router) { }
 
   ngOnInit(): void {
@@ -75,6 +78,7 @@ export class AddPackageComponent implements OnInit {
       foodOptions:this.foodOptions,
       price:this.price
     };
+
     this.service.addPackage(pkg);
     this.rtr.navigate(['/package/list-package']);
   }

@@ -5,13 +5,27 @@
         <th>Email</th>
         <th>Selected Package</th>
         <th>Address</th>
+        <th>Food Option</th>
+        <th>Sub Location</th>
+        <th>Trvel Mode</th>
+        <th>Price</th>
+        <th>Action</th>
         <tbody>
             <tr *ngFor="let cust of custDetails">
-                <td>{{cust.customerName }}</td>
+                <td>{{ cust.customerName}}</td>
                 <td>{{ cust.phoneNumber}}</td>
                 <td>{{ cust.email}}</td>
                 <td>{{ cust.packageName}}</td>
                 <td>{{ cust.address}}</td>
+                <td>{{ cust.foodOptions}}</td>
+                <td>{{ cust.subLocations}}</td>
+                <td>{{ cust.travelMode}}</td>
+                <td>{{ cust.price}}</td>
+                <!--  -->
+                <td>
+                    <span class="action" (click)="editCustomer()">Edt</span>
+                    <span class="action" style="margin-left: 5px;" (click)="deleteCustomer(cust.customerId)">Del</span><!--  -->
+                </td>
             </tr>
         </tbody>
     </table>
