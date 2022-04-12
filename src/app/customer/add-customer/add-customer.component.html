@@ -83,11 +83,11 @@
             </div>
             <div class="field-container">
                 <div>Travel Mode</div>
-
                 <select [(ngModel)]="travelMode">
-                    <option [value]="fdOp" *ngFor="let fdOp of selectedPackageTravelOptions">{{fdOp}}</option>
+                    <option [value]="trvlOption" *ngFor="let trvlOption of selectedPackageTravelOptions">{{trvlOption}}</option>
                 </select>
             </div>
+
             <div class="field-container" *ngIf="packageFoodOptions.length">
                 <div>Food Options</div>
                 <ng-container *ngFor="let fdOpt of packageFoodOptions">
@@ -108,7 +108,7 @@
                 <div>Tripdays</div>
                 <input type="number" [min]="1" [max]="tripMax" [placeholder]="tripMax" [(ngModel)]="tripDays">
             </div>
-            <div class="field-container" *ngIf="packageFoodOptions.length">
+            <div class="field-container" *ngIf="packageSubLocations.length">
                 <div>Sub Locations</div>
                 <ng-container *ngFor="let subLoc of packageSubLocations">
                     <input type="checkbox" (change)="updateSubLocations(subLoc)" [checked]="selectedSubLocations.includes(subLoc)">
@@ -129,19 +129,11 @@
                 <input type="text" [(ngModel)]="custPrice">
             </div>
         </div>
-
-        <!-- <div class="field-container">
-        <div>Test</div>
-        <select [(ngModel)]="selectedPKG">
-            <option [value]="'PKG_TVM'">Trivandrum</option>
-            <option [value]="'PKG_K'">Kochi</option>
-            <option [value]="'PKG_W'">Wayanad</option>
-        </select>
-             </div>  -->
     </div>
 
 
 </div>
     <div class="row btn-container">
-        <button type="button" (click)="addCust()">Submit</button>
+        <button *ngIf="!isEdit" type="button" (click)="addCust()">Submit</button>
+        <button *ngIf="isEdit" type="button" (click)="updateCust()">Update</button>
     </div>

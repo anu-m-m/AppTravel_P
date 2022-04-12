@@ -56,6 +56,23 @@ export class CustomerService {
       foodOptions: ['Breakfast', 'Lunch', 'Dinner'],
       subLocations: ['loc1', 'loc2', 'loc3'],
       travelMode: 'Bus'
+    },
+    {
+      customerId: 'CUST_000004',
+      customerType: 'India Holiday',
+      customerName: 'customerFname CustomeLname',
+      phoneNumber: 9526123456,
+      email: 'dd@gmail.com',
+      selectedPackage: 'PKG_6',
+      tripDays: 5,
+      tripStartDate: '2022-03-11',
+      tripEndDate: '2022-03-16',
+      price: 53000,
+      address: 'Ernakulam Kerala India',
+      boardingLocation: 'India',
+      foodOptions: ['Breakfast', 'Dinner'],
+      subLocations: ['KL','KA','AP'],
+      travelMode: 'Flight'
     }
   ];
   constructor() { }
@@ -64,6 +81,11 @@ export class CustomerService {
   }
   addNewCustomer(cust: any) {
     this.customers.push(cust);
+  }
+  updateCustomer(customerId: string, customer:any){
+    const index = this.customers.findIndex(cust => cust.customerId === customerId)
+    console.log('index', index);
+    this.customers[index] = customer;
   }
   getExsistingcustomerIds(): Observable<string[]> {
     const customerIds = [];
@@ -81,5 +103,4 @@ export class CustomerService {
     });
     this.customers = customers;
   }
-
 }

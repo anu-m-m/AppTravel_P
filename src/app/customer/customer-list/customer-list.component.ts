@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CustomerService } from '../service/customer.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class CustomerListComponent implements OnInit {
   custDetails=[];
 
   constructor(
-    private custService: CustomerService
+    private custService: CustomerService,
+    private routes: Router
     ) {}
 
   ngOnInit(): void {
@@ -29,8 +31,9 @@ export class CustomerListComponent implements OnInit {
     });
   }
 
-  editCustomer(){
-
+  editCustomer(customer){
+    this.routes.navigate(['/customer/add'],{state: {customer}});
+    console.log("rtr",this.customer);
   }
 
 }

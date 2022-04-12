@@ -56,17 +56,28 @@ export class PackageService {
       foodOptions: ['Breakfast', 'Lunch', 'Dinner'],
       price: 3000
     },
-    // {
-    //   pkgId:'PKG_5',
-    //   pkdName:'Kottayam Holiday',
-    //   pkgDesc:'' ,
-    //   destination: 'Kottayam',
-    //   subLocations: ['k1', 'k2', 'k3'],
-    //   tripDays: 2,
-    //   travelOptions: ['Bus', 'Train', 'Car'],
-    //   foodOptions: ['Breakfast', 'Lunch', 'Dinner'],
-    //   price: 3000
-    // }
+    {
+      pkgId:'PKG_5',
+      pkdName:'Kottayam Holiday',
+      pkgDesc:'' ,
+      destination: 'Kottayam',
+      subLocations: ['k1', 'k2', 'k3'],
+      tripDays: 2,
+      travelOptions: ['Bus', 'Train', 'Car'],
+      foodOptions: ['Breakfast', 'Lunch', 'Dinner'],
+      price: 3000
+    },
+    {
+      pkgId:'PKG_6',
+      pkdName:'India Holiday',
+      pkgDesc:'' ,
+      destination: 'India',
+      subLocations: ['KL', 'KA', 'TN','AP'],
+      tripDays: 5,
+      travelOptions: ['Bus', 'Train', 'Car','Flight'],
+      foodOptions: ['Breakfast', 'Lunch', 'Dinner'],
+      price: 53000
+    }
    ];
    employee = [
     {
